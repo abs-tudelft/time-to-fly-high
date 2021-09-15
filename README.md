@@ -10,4 +10,4 @@ singularity exec  /scratch-shared/tahmad/bio_data/flight.simg /arrow/cpp/release
 For querying NYC Taxi dataset on remote Dremio (client-server) nodes with varying number of records(1-16 millions). Different protocols like ODBC and turbodbc and Arrow Flight implementation is available [here](https://github.com/abs-tudelft/time-to-fly-high/blob/main/dremio_query.py).
 
 
-For querying NYC Taxi dataset with varying number of records (0.1-16 millions) through remote DataFusion client-server Flight connection, we used [DataFusion Flight](https://github.com/apache/arrow-datafusion/tree/master/datafusion-examples/examples) client-server implementation.
+For querying NYC Taxi dataset with varying number of records (0.1-16 millions) through remote DataFusion client-server Flight connection, we used [DataFusion Flight](https://github.com/apache/arrow-datafusion/tree/master/datafusion-examples/examples) updated [client](https://github.com/abs-tudelft/time-to-fly-high/blob/main/flight_client.rs)-[server](https://github.com/abs-tudelft/time-to-fly-high/blob/main/flight_server.rs) implementation.
