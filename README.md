@@ -13,3 +13,11 @@ For querying NYC Taxi dataset on remote Dremio (client-server) nodes with varyin
 
 
 For querying NYC Taxi dataset with varying number of records (0.1-16 millions) through remote DataFusion client-server Flight connection, we used [DataFusion Flight](https://github.com/apache/arrow-datafusion/tree/master/datafusion-examples/examples) updated [client](https://github.com/abs-tudelft/time-to-fly-high/blob/main/flight_client.rs)-[server](https://github.com/abs-tudelft/time-to-fly-high/blob/main/flight_server.rs) implementation.
+
+Commands for creating Arrow Flight based singularity container:
+```
+sudo singularity build -w flight.simg flight.def
+sudo singularity shell -w flight.simg
+> mkdir /arrow
+> cp -r arrow/cpp/release/release /arrow
+```
