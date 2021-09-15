@@ -1,0 +1,105 @@
+BootStrap: debootstrap
+OSVersion: bionic
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+
+
+%runscript
+    echo "This is what happens when you run the container..."
+
+
+%post
+    echo "Hello from inside the container"
+    sed -i 's/$/ universe/' /etc/apt/sources.list
+    echo "deb http://nl.archive.ubuntu.com/ubuntu bionic-updates main restricted" >> /etc/apt/sources.list
+    apt-get update
+    apt-get -y install vim
+    apt-get -y update
+    apt-get -y upgrade
+    apt-get -y dist-upgrade
+    apt-get -y install vim
+    apt-get install -y curl
+    apt-get install cmake -y
+    #pip install psutil
+    apt-get install -y software-properties-common
+    #apt-get install add-apt-repository
+    apt-get install flex bison -y
+    apt-get install libboost-all-dev -y 
+    apt-get update && apt-get install -y gtk-doc-tools
+    apt-get update && apt-get install -y libglib2.0-dev
+    apt-get update && apt-get install -y libtool-bin
+    apt-get update && apt-get install -y autoconf
+    apt-get update && apt-get install -y autoconf-archive
+    apt-get update && apt-get install -y libgirepository1.0-dev
+    apt-get update && apt install -y git
+    apt-get update && apt-get install -y linux-tools-generic
+    apt-get install sed
+    #apt-get install -y libssl-dev
+ 
+    apt-get install -y libssl-dev
+    apt install -y -V lsb-release wget
+    #wget https://apache.bintray.com/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb
+    #apt install -y -V ./apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb
+    #apt update
+    #apt install -y -V libarrow-dev # For C++
+    # apt install -y -V libarrow-glib-dev # For GLib (C)
+    #apt install -y -V libarrow-flight-dev # For Flight C++
+    #apt install -y -V libplasma-dev # For Plasma C++
+    # apt install -y -V libplasma-glib-dev # For Plasma GLib (C)
+    
+    apt install -y -V googletest
+    apt install -y -V libgflags-dev
+
+    wget https://github.com/google/googletest/archive/refs/tags/release-1.11.0.tar.gz
+    tar xf release-1.11.0.tar.gz
+    cd googletest-release-1.11.0
+    cmake -DBUILD_SHARED_LIBS=ON .
+    make
+    make install
+
+    #cp -a googletest/include/gtest /usr/include
+    #cp -a googlemock/gtest/libgtest_main.so googlemock/gtest/libgtest.so /usr/lib/
+    #ldconfig -v | grep gtest
+    
+    git clone https://code.googlesource.com/re2
+    cd re2
+    make
+    make test
+    make install
+    
+    #cd ..
+    #rm -r arrow
+    git clone https://github.com/Arrow-Genomics/arrow
+    #git clone --single-branch --branch maint-0.12.x https://github.com/tahashmi/arrow.git
+    ##git clone https://github.com/tahashmi/arrow.git
+    #sed -i '606 s/^/#/'  arrow/cpp/src/arrow/CMakeLists.txt  
+    cd arrow
+    ##git checkout -b maint-0.12.x
+    cd cpp
+    mkdir release
+    cd release
+    ##cd arrow/cpp/release
+    cmake -DCMAKE_BUILD_TYPE=Release -DARROW_PARQUET=ON -DARROW_FLIGHT=ON -DARROW_BUILD_BENCHMARKS=ON ..
+    make
+    make install
+
+    #mkdir /arrow
+    #cp -r arrow/cpp/release/release /arrow
+
+    apt-get clean
+
+%environment
+    export PATH=$PATH:/usr/local/bin
+    JAVA_HOME=/usr/bin/java
+    #export TOOLS_PREFIX='/usr/local'
+    export GCC_VERSION='5.5.0'
+    export BOOST_VERSION='1_67_0'
+    export CPATH='/usr/local/include:/usr/lib'
+    export PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
+    export LD_LIBRARY_PATH='/usr/lib:/usr/lib/x86_64-linux-gnu:/usr/local/lib:/usr/lib/x86_64-linux-gnu/openmpi/lib'
+    #export PATH=$TOOLS_PREFIX/bin:$PATH
+    #echo $LD_LIBRARY_PATH
+
+    #Direct Flight
+    #sudo singularity build -w flight.simg Singularity
+    #mkdir /arrow
+    #cp -r arrow/cpp/release/release /arrow
