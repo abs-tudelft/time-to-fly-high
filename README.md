@@ -1,6 +1,6 @@
 For client-server (local and remote) performance, we used [Arrow Flight Benchmark](https://github.com/Arrow-Genomics/arrow/blob/master/cpp/src/arrow/flight/flight_benchmark.cc), the Python script is placed [here](https://github.com/abs-tudelft/time-to-fly-high/blob/main/perf_test.py). 
 
-On [Cartesius](https://userinfo.surfsara.nl/systems/cartesius) local node:
+[Cartesius](https://userinfo.surfsara.nl/systems/cartesius) local node example:
 ```
 singularity exec  /scratch-shared/tahmad/bio_data/flight.simg /arrow/cpp/release/release/arrow-flight-benchmark --server_host tcn541
 
