@@ -1,5 +1,12 @@
 For client-server (local and remote) performance, we used [Arrow Flight Benchmark](https://github.com/Arrow-Genomics/arrow/blob/master/cpp/src/arrow/flight/flight_benchmark.cc), the Python script is placed [here](https://github.com/abs-tudelft/time-to-fly-high/blob/main/perf_test.py). 
 
+On [Cartesius](https://userinfo.surfsara.nl/systems/cartesius) local node:
+```
+singularity exec  /scratch-shared/tahmad/bio_data/flight.simg /arrow/cpp/release/release/arrow-flight-benchmark --server_host tcn541
+
+singularity exec  /scratch-shared/tahmad/bio_data/flight.simg /arrow/cpp/release/release/arrow-flight-perf-server --server_host tcn541
+```
+
 For querying NYC Taxi dataset on remote Dremio (client-server) nodes with varying number of records(1-16 millions). Different protocols like ODBC and turbodbc and Arrow Flight implementation is available [here](https://github.com/abs-tudelft/time-to-fly-high/blob/main/dremio_query.py).
 
 
