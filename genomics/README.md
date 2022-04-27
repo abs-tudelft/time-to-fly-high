@@ -2,6 +2,8 @@ Create Apache Arrow based [Singularity](https://sylabs.io/guides/3.0/user-guide/
 
     sudo singularity build --sandbox bionic singularity
     sudo singularity build arrowupdated.simg bionic
+    
+ Change the path for `singularity exec /home/tahmad/tahmad/singularity/arrowupdated.simg` in `run.sh` file accordingly. 
 
 Download data:
 
