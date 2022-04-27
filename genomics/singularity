@@ -82,5 +82,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt install -y -V libparquet-dev # For Apache Parquet C++
     apt install -y -V libparquet-glib-dev # For Apache Parquet GLib (C)
     
+    wget https://github.com/tahashmi/bwa/releases/download/0.02/bwa-sam.tar.gz
+    tar -zxvf bwa-sam.tar.gz
+    cd bwa-sam
+    make clean
+    make 
+    sudo cp bwa /usr/local/bin/
+    
 %environment
     export PATH=$PATH:/usr/local/bin
