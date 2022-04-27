@@ -2,7 +2,7 @@
 
 #SBATCH --output=run.out
 #SBATCH -t 05:00:00 
-#SBATCH -p fat 
+#SBATCH -p normal 
 #SBATCH -N 2
 
 rm nodeslist.txt
@@ -17,9 +17,6 @@ alias python='/usr/local/bin/python3.8'
 
 echo opening ssh connections to start master
 ssh ${nodes[0]} hostname
-
-#echo -n "starting on node master";
-#singularity exec /home/tahmad/tahmad/singularity/arrowlatest.simg /home/tahmad/tahmad/neusomatic/test/run_test.sh 0
 
 i=0
 
@@ -36,7 +33,6 @@ i=0
 for i in $( seq 0 $last )
 do
    /usr/bin/ssh ${nodes[$i]} "alias python='/usr/local/bin/python3.8'; singularity exec /home/tahmad/tahmad/singularity/arrowupdated.simg /home/tahmad/tahmad/neusomatic/test/run_test.sh ${i} " &
-   #/usr/bin/ssh ${nodes[$i]} "singularity exec /home/tahmad/tahmad/singularity/arrowupdated.simg python /home/tahmad/tahmad/testing/pre/sender.py --proc ${i}  --path /scratch-shared/tahmad/bio_data/FDA/Illumina/HG003/ --nodes 8 " &
 done
 
 wait
