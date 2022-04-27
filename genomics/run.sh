@@ -32,7 +32,7 @@ i=0
 
 for i in $( seq 0 $last )
 do
-   /usr/bin/ssh ${nodes[$i]} "alias python='/usr/local/bin/python3.8'; singularity exec /home/tahmad/tahmad/singularity/arrowupdated.simg /home/tahmad/tahmad/neusomatic/test/run_test.sh ${i} " &
+   /usr/bin/ssh ${nodes[$i]} "alias python='/usr/local/bin/python3.8'; singularity exec /home/tahmad/tahmad/singularity/arrowupdated.simg script.sh ${i} " &
 done
 
 wait
