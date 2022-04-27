@@ -1,4 +1,4 @@
-Create Apache Arrow based [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html) container or [install](https://arrow.apache.org/install/) Apache Arrow on your system:
+Create Apache Arrow based [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html) container or [install](https://arrow.apache.org/install/) Apache Arrow directly on your system:
 
     sudo singularity build --sandbox bionic singularity
     sudo singularity build arrowupdated.simg bionic
