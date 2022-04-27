@@ -27,7 +27,9 @@ Index reference:
     ./bwa index reference/GRCh38_no_alt_analysis_set.fasta
 
 Running pipeline on a SLURM cluster:
+
 Make sure to change the sbatch script with nodes configuration in `run.sh` file.
+
 Set properties for `--ref` (reference), `--path` (input FASTQ, i.e, ERR194147), `--nodes`, `--cores` correctly in `script.sh` file. Finally run:
 
     sbatch run.sh
