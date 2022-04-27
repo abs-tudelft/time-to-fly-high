@@ -28,6 +28,6 @@ Index reference:
 
 Running pipeline on a SLURM cluster:
 Make sure to change the sbatch script with nodes configuration in `run.sh` file.
-Set properties for --ref, --path, --nodes, --cores correctly in `script.sh` file. 
-Finally run:
+Set properties for --ref, --path, --nodes, --cores correctly in `script.sh` file. Finally run:
+
     sbatch run.sh
