@@ -1,7 +1,9 @@
+Create Apache Arrow based singularity container or install Apache Arrow on your system:
 
     sudo singularity build --sandbox bionic singularity
     sudo singularity build arrowupdated.simg bionic
 
+Download data:
 
     mkdir -p reference
 
