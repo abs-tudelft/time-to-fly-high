@@ -1,11 +1,11 @@
-Create Apache Arrow based [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html) container or [install](https://arrow.apache.org/install/) Apache Arrow directly on your system:
+1. Create Apache Arrow based [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html) container or [install](https://arrow.apache.org/install/) Apache Arrow directly on your system:
 
     sudo singularity build --sandbox bionic singularity
     sudo singularity build arrowupdated.simg bionic
     
- Change the path for `singularity exec /home/tahmad/tahmad/singularity/arrowupdated.simg` in `run.sh` file accordingly. 
+Change the path for `singularity exec /home/tahmad/tahmad/singularity/arrowupdated.simg` in `run.sh` file accordingly. 
 
-Download data:
+2. Download data:
 
     mkdir -p reference
 
@@ -20,7 +20,7 @@ Download data:
     wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR194/ERR194147/ERR194147_2.fastq.gz
     cd ..
 
-Index reference:
+3. Index reference:
 
     git clone https://github.com/lh3/bwa.git
     cd bwa; make
