@@ -18,6 +18,8 @@ Download data:
     wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR194/ERR194147/ERR194147_2.fastq.gz
     cd ..
 
+Index reference:
+
     git clone https://github.com/lh3/bwa.git
     cd bwa; make
     ./bwa index reference/GRCh38_no_alt_analysis_set.fasta
