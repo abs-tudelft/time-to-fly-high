@@ -87,7 +87,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     cd bwa-sam
     make clean
     make 
-    sudo cp bwa /usr/local/bin/
+    cp bwa /usr/local/bin/
     
 %environment
     export PATH=$PATH:/usr/local/bin
