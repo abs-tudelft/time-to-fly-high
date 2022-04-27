@@ -25,3 +25,8 @@ Index reference:
     git clone https://github.com/lh3/bwa.git
     cd bwa; make
     ./bwa index reference/GRCh38_no_alt_analysis_set.fasta
+
+Running pipeline on a SLURM cluster:
+Make sure to change the sbatch script with nodes configuration in `run.sh` file.
+
+    sbatch run.sh
