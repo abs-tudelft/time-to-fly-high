@@ -1,5 +1,5 @@
 Create Apache Arrow based [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html) container from [singularity](https://github.com/abs-tudelft/time-to-fly-high/blob/main/genomics/singularity.def) definition file or [install](https://arrow.apache.org/install/) Apache Arrow directly on your system:
-
+    #Local system
     sudo singularity build --sandbox bionic singularity.def
     sudo singularity build arrowupdated.simg bionic
     
