@@ -1,11 +1,11 @@
 Create Apache Arrow based [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html) container from [singularity](https://github.com/abs-tudelft/time-to-fly-high/blob/main/genomics/singularity.def) definition file or [install](https://arrow.apache.org/install/) Apache Arrow directly on your system:
-    #Local system
-    sudo singularity build --sandbox bionic singularity.def
+
+    sudo singularity build --sandbox bionic singularity.def #Local system
     sudo singularity build arrowupdated.simg bionic
     
     OR
     
-    singularity build --fakeroot arrowupdated.simg singularity.def
+    singularity build --fakeroot arrowupdated.simg singularity.def #HPC system
     
 Change the path for `singularity exec /home/tahmad/tahmad/singularity/arrowupdated.simg` in `run.sh` file accordingly. 
 
