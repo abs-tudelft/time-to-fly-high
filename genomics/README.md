@@ -1,3 +1,5 @@
+Git clone repo:
+
     git clone https://github.com/abs-tudelft/time-to-fly-high.git 
     cd genomics
 
