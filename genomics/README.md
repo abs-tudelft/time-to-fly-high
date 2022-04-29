@@ -35,6 +35,14 @@ Index reference:
     cd bwa; make
     ./bwa index reference/GRCh38_no_alt_analysis_set.fasta
 
+ArrowSAM based BWA-MEM:
+
+    wget https://github.com/tahashmi/bwa/releases/download/0.02/bwa-sam.tar.gz
+    tar -zxvf bwa-sam.tar.gz
+    cd bwa-sam
+    make clean
+    make 
+    
 Running pipeline on a SLURM cluster:
 
 Make sure to change the sbatch script with nodes configuration in `run.sh` file.
