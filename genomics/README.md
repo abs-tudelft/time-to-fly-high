@@ -34,6 +34,11 @@ Index reference:
     git clone https://github.com/lh3/bwa.git
     cd bwa; make
     ./bwa index reference/GRCh38_no_alt_analysis_set.fasta
+    
+Download SeqKit:
+
+    wget https://github.com/shenwei356/seqkit/releases/download/v0.15.0/seqkit_linux_amd64.tar.gz
+    tar -zxvf seqkit_linux_amd64.tar.gz
 
 ArrowSAM based BWA-MEM:
 
